@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{74919AC1-DE81-4F04-B1EA-7B81C6839DAF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bus_Reservation</RootNamespace>
+    <AssemblyName>Bus_Reservation</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>Bus_Reservation.Program</StartupObject>
+    <ApplicationIcon>travel_bus.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvanceBookingCancellation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvanceBookingCancellation.Designer.cs">
+      <DependentUpon>AdvanceBookingCancellation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvanceSeatBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvanceSeatBooking.Designer.cs">
+      <DependentUpon>AdvanceSeatBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking And Passenger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking And Passenger.Designer.cs">
+      <DependentUpon>Booking And Passenger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingAdvanceWaiting.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingAdvanceWaiting.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BookingCancellation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingCancellation.Designer.cs">
+      <DependentUpon>BookingCancellation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingCancellation2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingCancellation2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BookingCompleted.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingCompleted.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BookingCurrent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingCurrent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BookingPassengers.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingPassengers.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BookingPassengersAW.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingPassengersAW.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BookingPassengersC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingPassengersC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BookingReportsComp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingReportsComp.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BusMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusMaster.Designer.cs">
+      <DependentUpon>BusMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CancellationSB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancellationSB.Designer.cs">
+      <DependentUpon>CancellationSB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CLEAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLEAR.Designer.cs">
+      <DependentUpon>CLEAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompletedSB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompletedSB.Designer.cs">
+      <DependentUpon>CompletedSB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentSB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrentSB.Designer.cs">
+      <DependentUpon>CurrentSB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverMaster.Designer.cs">
+      <DependentUpon>DriverMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master.cs" />
+    <Compile Include="MDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI.Designer.cs">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Newuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Newuser.Designer.cs">
+      <DependentUpon>Newuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficeMaster.Designer.cs">
+      <DependentUpon>OfficeMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PassengerMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassengerMaster.Designer.cs">
+      <DependentUpon>PassengerMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdvanceBookingCancellation.resx">
+      <DependentUpon>AdvanceBookingCancellation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvanceSeatBooking.resx">
+      <DependentUpon>AdvanceSeatBooking.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking And Passenger.resx">
+      <DependentUpon>Booking And Passenger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingAdvanceWaiting.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingAdvanceWaiting.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingCancellation.resx">
+      <DependentUpon>BookingCancellation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingCancellation2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingCancellation2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingCompleted.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingCompleted.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingCurrent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingCurrent.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingPassengers.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingPassengers.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingPassengersAW.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingPassengersAW.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingPassengersC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingPassengersC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingReportsComp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingReportsComp.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusMaster.resx">
+      <DependentUpon>BusMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancellationSB.resx">
+      <DependentUpon>CancellationSB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLEAR.resx">
+      <DependentUpon>CLEAR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompletedSB.resx">
+      <DependentUpon>CompletedSB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentSB.resx">
+      <DependentUpon>CurrentSB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverMaster.resx">
+      <DependentUpon>DriverMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI.resx">
+      <DependentUpon>MDI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Newuser.resx">
+      <DependentUpon>Newuser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfficeMaster.resx">
+      <DependentUpon>OfficeMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassengerMaster.resx">
+      <DependentUpon>PassengerMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBookingAdvanceWaiting.resx">
+      <DependentUpon>RBookingAdvanceWaiting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBookingCancellation.resx">
+      <DependentUpon>RBookingCancellation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBookingCompleted.resx">
+      <DependentUpon>RBookingCompleted.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBookingCurrent.resx">
+      <DependentUpon>RBookingCurrent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBusMaster.resx">
+      <DependentUpon>RBusMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDriverMaster.resx">
+      <DependentUpon>RDriverMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RealMDI.resx">
+      <DependentUpon>RealMDI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RLoginRecords.resx">
+      <DependentUpon>RLoginRecords.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ROfficeMaster.resx">
+      <DependentUpon>ROfficeMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RouteMaster.resx">
+      <DependentUpon>RouteMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPassengerMaster.resx">
+      <DependentUpon>RPassengerMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTBusMaster.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTBusMaster.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTDriverMaster.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTDriverMaster.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTLoginRecords.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTLoginRecords.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTOfficeMaster.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTOfficeMaster.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTPassengerMaster.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTPassengerMaster.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTRouteMaster.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTRouteMaster.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTStaffMaster.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTStaffMaster.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRouteMaster.resx">
+      <DependentUpon>RRouteMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RStaffMaster.resx">
+      <DependentUpon>RStaffMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seat Booking Details.resx">
+      <DependentUpon>Seat Booking Details.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatBooking.resx">
+      <DependentUpon>SeatBooking.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatSelectionLower.resx">
+      <DependentUpon>SeatSelectionLower.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatSelectionLower21.resx">
+      <DependentUpon>SeatSelectionLower21.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatSelectionLower22.resx">
+      <DependentUpon>SeatSelectionLower22.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatSelectionUpper.resx">
+      <DependentUpon>SeatSelectionUpper.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatSelectionUpper21.resx">
+      <DependentUpon>SeatSelectionUpper21.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatSelectionUpper22.resx">
+      <DependentUpon>SeatSelectionUpper22.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffMaster.resx">
+      <DependentUpon>StaffMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitingList.resx">
+      <DependentUpon>WaitingList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RBookingAdvanceWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBookingAdvanceWaiting.Designer.cs">
+      <DependentUpon>RBookingAdvanceWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBookingCancellation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBookingCancellation.Designer.cs">
+      <DependentUpon>RBookingCancellation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBookingCompleted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBookingCompleted.Designer.cs">
+      <DependentUpon>RBookingCompleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBookingCurrent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBookingCurrent.Designer.cs">
+      <DependentUpon>RBookingCurrent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBusMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBusMaster.Designer.cs">
+      <DependentUpon>RBusMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RDriverMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDriverMaster.Designer.cs">
+      <DependentUpon>RDriverMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RealMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RealMDI.Designer.cs">
+      <DependentUpon>RealMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RLoginRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RLoginRecords.Designer.cs">
+      <DependentUpon>RLoginRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ROfficeMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ROfficeMaster.Designer.cs">
+      <DependentUpon>ROfficeMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RouteMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RouteMaster.Designer.cs">
+      <DependentUpon>RouteMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPassengerMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPassengerMaster.Designer.cs">
+      <DependentUpon>RPassengerMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPTBusMaster.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTBusMaster.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTDriverMaster.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTDriverMaster.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTLoginRecords.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTLoginRecords.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTOfficeMaster.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTOfficeMaster.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTPassengerMaster.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTPassengerMaster.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTRouteMaster.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTRouteMaster.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTStaffMaster.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTStaffMaster.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RRouteMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRouteMaster.Designer.cs">
+      <DependentUpon>RRouteMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RStaffMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RStaffMaster.Designer.cs">
+      <DependentUpon>RStaffMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seat Booking Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seat Booking Details.Designer.cs">
+      <DependentUpon>Seat Booking Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatBooking.Designer.cs">
+      <DependentUpon>SeatBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatSelectionLower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatSelectionLower.Designer.cs">
+      <DependentUpon>SeatSelectionLower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatSelectionLower21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatSelectionLower21.Designer.cs">
+      <DependentUpon>SeatSelectionLower21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatSelectionLower22.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatSelectionLower22.Designer.cs">
+      <DependentUpon>SeatSelectionLower22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatSelectionUpper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatSelectionUpper.Designer.cs">
+      <DependentUpon>SeatSelectionUpper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatSelectionUpper21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatSelectionUpper21.Designer.cs">
+      <DependentUpon>SeatSelectionUpper21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatSelectionUpper22.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatSelectionUpper22.Designer.cs">
+      <DependentUpon>SeatSelectionUpper22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffMaster.Designer.cs">
+      <DependentUpon>StaffMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitingList.Designer.cs">
+      <DependentUpon>WaitingList.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seat_layout_tab_nor_lad_avl_rotated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_property-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_property-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\advance-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelled_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checklist-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron_left_round-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron_right_round-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_property-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_property-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\end-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rupee-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seat_layout_screen_nor_avl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seat_layout_screen_nor_avl1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stairs_down-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stairs_up-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steering_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xbox_menu-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="travel_bus_report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="travel_bus.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
